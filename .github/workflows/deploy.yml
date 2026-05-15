@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/si-2026-lab3:master-latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/si-2026-lab3:${{ github.ref_name }}-latest .
 
       - name: Push image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/si-2026-lab3:master-latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/si-2026-lab3:${{ github.ref_name }}-latest
